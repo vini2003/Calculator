@@ -1,0 +1,13 @@
+@import "src/App";
+
+$className: history;
+
+.#{$className} {
+  @apply w-full h-8 rounded-xl mb-2 bg-neutral-800 text-neutral-500;
+  pointer-events: none;
+
+  &-field {
+    @apply w-full h-full rounded-xl pl-[0.625rem] pr-2 pb-[0.125rem] bg-neutral-800;
+    pointer-events: none;
+  }
+}

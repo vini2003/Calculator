@@ -1,0 +1,15 @@
+@import "src/App";
+
+$className: input;
+
+.#{$className} {
+  @apply w-full h-12 rounded-xl outline outline-0 outline-neutral-300 transition-[outline-width] duration-[50ms] ease-linear;
+
+  &:hover {
+    @apply outline-2 outline-white;
+  }
+
+  &-field {
+    @apply w-full h-full rounded-xl pl-4 pr-4 pb-[0.125rem];
+  }
+}

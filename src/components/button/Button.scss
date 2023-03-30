@@ -1,0 +1,31 @@
+@import "src/App";
+
+$className: button;
+
+.#{$className} {
+  @apply w-12 h-[2.5rem] flex flex-grow cursor-pointer items-center justify-center rounded-xl font-bold text-white outline outline-0 outline-neutral-300 transition-[outline-width] duration-[50ms] ease-linear caret-transparent;
+
+  &::selection {
+    @apply text-neutral-200 bg-transparent;
+  }
+
+  &.enabled {
+    @apply bg-neutral-600;
+  }
+
+  &.disabled {
+    @apply bg-red-600;
+  }
+
+  &.locked {
+    @apply bg-neutral-600;
+  }
+
+  &.important {
+    @apply w-[6.5rem] bg-green-600;
+  }
+
+  &:hover {
+    @apply outline-2 outline-white;
+  }
+}
