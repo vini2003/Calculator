@@ -9,6 +9,7 @@ import History from "./components/history/History";
 export interface AppState {
   content?: string;
   setContent?: (content: string) => void;
+  solve(): void;
 }
 
 export const AppStateContext = React.createContext<AppState>(undefined);
@@ -17,6 +18,9 @@ export const useAppContext = () => React.useContext(AppStateContext);
 
 function App() {
   const appState: AppState = {
+    solve() {
+      handleOnClick(Operator.Solve);
+    }
   };
 
   const [history, setHistory] = useState<string[]>([]);
@@ -27,11 +31,7 @@ function App() {
     if (token == Operator.Solve) {
       if (appState.content && appState.content.length > 0) {
         const evalute = math.evaluate(appState.content).toString();
-        appState.setContent(evalute);
-
-        setTimeout(() => {
-          appState.setContent('');
-        }, 1000);
+        appState.setContent('');
 
         history.unshift(appState.content + " = " + evalute);
         setHistory([ ...history ]);

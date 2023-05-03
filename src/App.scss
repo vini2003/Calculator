@@ -52,6 +52,9 @@
 .list {
   @apply min-h-[8.45rem] max-h-24 overflow-y-auto;
 
+  display: flex;
+  flex-direction: column-reverse;
+
   transform: translate(0, -15%);
 
   mask: linear-gradient(180deg, #0000, #000 5% 95%, #0000);

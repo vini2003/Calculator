@@ -20,6 +20,12 @@ export const Input: React.FC<InputProps> = (props) => {
     setContent(event.target.value);
   }
 
+  function handleOnKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key == 'Enter') {
+      appState.solve();
+    }
+  }
+
   function element(): ReactElement {
     return (
       <div className='input'>
@@ -27,6 +33,7 @@ export const Input: React.FC<InputProps> = (props) => {
           type='text'
           value={content}
           onChange={handleOnChange}
+          onKeyDown={handleOnKeyDown}
           placeholder=''
           className='input-field'
         />
